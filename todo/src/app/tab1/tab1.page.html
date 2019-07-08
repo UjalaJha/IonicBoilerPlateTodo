@@ -20,8 +20,8 @@
     </ng-container>
  
     <ion-item-sliding *ngFor="let item of todos">
-      <!-- <ion-item lines="inset" button [routerLink]="['/details', item.id]"> -->
-      <ion-item lines="inset">
+      <ion-item lines="inset" button [routerLink]="['/details', item.id]">
+      <!-- <ion-item lines="inset"> -->
         <ion-label>
           {{ item.task }}
           <p>{{ item.createdAt | date:'short' }}</p>
@@ -40,8 +40,8 @@
   </ion-list>
  
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button >
-    <!-- <ion-fab-button routerLink="/details" routerDirection="forward"> -->
+    <!-- <ion-fab-button > -->
+    <ion-fab-button routerLink="/details" routerDirection="forward">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
