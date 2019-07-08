@@ -13,6 +13,7 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { Todo, TodoService } from './services/todo.service';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,11 +22,13 @@ import { Todo, TodoService } from './services/todo.service';
   	BrowserModule, IonicModule.forRoot(), AppRoutingModule,
   	AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+    AngularFireAuthModule,
   ],
   providers: [
     StatusBar,
     SplashScreen,
     TodoService,
+    AngularFireAuthModule,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
