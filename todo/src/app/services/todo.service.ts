@@ -3,15 +3,17 @@ import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/fire
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-@Injectable({
-  providedIn: 'root'
-})
 export interface Todo {
   id?: string;
   task: string;
   priority: number;
   createdAt: number;
 }
+
+@Injectable({
+  providedIn: 'root'
+})
+
 export class TodoService {
 
   private todosCollection: AngularFirestoreCollection<Todo>;
