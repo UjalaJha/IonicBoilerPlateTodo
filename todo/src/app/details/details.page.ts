@@ -13,7 +13,7 @@ export class DetailsPage implements OnInit {
 	todo: Todo = {
     task: 'test',
     createdAt: new Date().getTime(),
-    priority: 2
+    priority: 1
   };
  
   todoId = null;
