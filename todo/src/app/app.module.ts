@@ -17,7 +17,7 @@ import { AuthService } from './services/auth.service';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { NgxErrorsModule } from '@hackages/ngxerrors';
-
+import { GooglePlus } from '@ionic-native/google-plus/ngx';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -36,6 +36,7 @@ import { NgxErrorsModule } from '@hackages/ngxerrors';
     TodoService,
     AuthService,
     AngularFireAuthModule,
+    GooglePlus,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

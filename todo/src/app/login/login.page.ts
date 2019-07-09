@@ -57,4 +57,12 @@ export class LoginPage implements OnInit {
     );
 	}
 
+	nativeGoogleLogin() {
+      this.auth.googleLogin()
+        .then(res => {
+          this.router.navigateByUrl('home')
+        })
+    }
+
+
 }

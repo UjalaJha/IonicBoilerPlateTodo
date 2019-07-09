@@ -2,12 +2,14 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase/app';
 import AuthProvider = firebase.auth.AuthProvider;
+import { GooglePlus } from '@ionic-native/google-plus/ngx';
+import {Platform} from "@ionic/angular";
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 	private user: firebase.User;
-  constructor(public afAuth: AngularFireAuth) { 
+  constructor(public afAuth: AngularFireAuth, private googlePlus: GooglePlus,public platform: Platform) { 
   	afAuth.authState.subscribe(user => {
 			this.user = user;
 		});
@@ -63,4 +65,29 @@ export class AuthService {
 		}
 
 	}
+	googleLogin(): Promise<any> {
+
+    return new Promise((resolve, reject) => {
+      this.googlePlus.login({
+        'webClientId': '950957444263-40e80gljjd0edn3l76s34q968mekh2jl.apps.googleusercontent.com',
+        'offline': true
+      }).then(res => {
+      	console.log(res);
+        const googleCredential = firebase.auth.GoogleAuthProvider
+          .credential(res.idToken);
+
+       
+        firebase.auth().signInWithCredential(googleCredential)
+          .then(response => {
+            console.log("Firebase success: " + JSON.stringify(response));
+            resolve(response)
+          });
+       
+
+      }, err => {
+        console.error("Error: ", err)
+        reject(err);
+      });
+    });
+  }
 }
