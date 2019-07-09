@@ -36,10 +36,13 @@ export class AuthService {
 		return this.oauthSignIn(new firebase.auth.GoogleAuthProvider());
 	}
 
-	private oauthSignIn(provider: AuthProvider) {
+	private oauthSignIn(provider: AuthProvider) : Promise<any>  {
+
 		if (!(<any>window).cordova) {
 			return this.afAuth.auth.signInWithPopup(provider);
-		} else {
+		} 
+		else 
+		{
 			return this.afAuth.auth.signInWithRedirect(provider)
 			.then(() => {
 				return this.afAuth.auth.getRedirectResult().then( result => {
@@ -47,7 +50,7 @@ export class AuthService {
 					// You can use it to access the Google API.
 					let token =(<any>result).credential.accessToken;
 					// The signed-in user info.
-					let user = result.user;
+					let user = (<any>result).user;
 					console.log(token, user);
 				}).catch(function(error) {
 					// Handle Errors here.
@@ -55,5 +58,6 @@ export class AuthService {
 				});
 			});
 		}
+
 	}
 }

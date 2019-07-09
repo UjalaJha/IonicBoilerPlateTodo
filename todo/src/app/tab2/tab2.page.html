@@ -6,4 +6,6 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+	<ion-list-header *ngIf="auth.getEmail()">Email : {{auth.getEmail()}}</ion-list-header>
+</ion-content>
