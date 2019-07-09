@@ -27,11 +27,12 @@
     "@ionic-native/status-bar": "^5.0.0",
     "@ionic/angular": "^4.1.0",
     "cordova": "^9.0.0",
-    "cordova-android": "8.0.0",
+    "cordova-android": "^8.0.0",
     "cordova-plugin-browsertab": "^0.2.0",
     "cordova-plugin-buildinfo": "^2.0.3",
     "cordova-plugin-compat": "^1.2.0",
     "cordova-plugin-customurlscheme": "^4.4.0",
+    "cordova-universal-links-plugin": "^1.2.1",
     "cordova-universal-links-plugin-fix": "^1.2.1",
     "core-js": "^2.5.4",
     "firebase": "^6.2.4",
@@ -70,7 +71,8 @@
     "protractor": "~5.4.0",
     "ts-node": "~8.3.0",
     "tslint": "~5.17.0",
-    "typescript": "~3.1.6"
+    "typescript": "~3.1.6",
+    "cordova-plugin-inappbrowser": "^3.0.0"
   },
   "description": "An Ionic project",
   "cordova": {
@@ -84,17 +86,16 @@
       },
       "cordova-plugin-ionic-keyboard": {},
       "cordova-plugin-buildinfo": {},
-      "cordova-universal-links-plugin": {},
       "cordova-plugin-browsertab": {},
       "cordova-plugin-customurlscheme": {
         "URL_SCHEME": "com.firebase.cordova",
         "ANDROID_SCHEME": " ",
         "ANDROID_HOST": " ",
         "ANDROID_PATHPREFIX": "/"
-      }
+      },
+      "cordova-plugin-inappbrowser": {},
+      "cordova-universal-links-plugin": {}
     },
-    "platforms": [
-      "android"
-    ]
+    "platforms": []
   }
 }

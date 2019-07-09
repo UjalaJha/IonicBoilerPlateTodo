@@ -9,7 +9,7 @@
 		<ion-list inset>
 
 			<ion-item [ngClass]="{ invalid: emailErrors.hasError('*', ['touched', 'dirty']) }">
-				<ion-input type="text" placeholder="Email" formControlName="email"></ion-input>
+				<ion-input type="text" placeholder="Email" formControlName="email" value=""></ion-input>
 			</ion-item>
 
 			<div ngxErrors="email" #emailErrors="ngxErrors">

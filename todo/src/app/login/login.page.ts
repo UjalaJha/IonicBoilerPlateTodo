@@ -38,7 +38,7 @@ export class LoginPage implements OnInit {
 
 		this.auth.signInWithEmail(credentials)
 			.then(
-				() => this.router.navigateByUrl('home'),
+				() =>this.router.navigateByUrl('home'),
 				error => this.loginError = error.message
 			);
 	}
@@ -49,7 +49,10 @@ export class LoginPage implements OnInit {
 	loginWithGoogle() {
   this.auth.signInWithGoogle()
     .then(
-      () => this.router.navigateByUrl('home'),
+      (res) => {
+					console.log(res)
+					this.router.navigateByUrl('home')
+			},
       error => console.log(error.message)
     );
 	}
