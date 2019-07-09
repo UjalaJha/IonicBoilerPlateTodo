@@ -13,7 +13,10 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { Todo, TodoService } from './services/todo.service';
+import { AuthService } from './services/auth.service';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { NgxErrorsModule } from '@hackages/ngxerrors';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,11 +26,15 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
   	AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgxErrorsModule
   ],
   providers: [
     StatusBar,
     SplashScreen,
     TodoService,
+    AuthService,
     AngularFireAuthModule,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

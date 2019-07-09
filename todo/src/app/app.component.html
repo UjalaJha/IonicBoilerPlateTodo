@@ -1,3 +1,28 @@
 <ion-app>
+	<ion-header>
+  <ion-toolbar>
+  	
+  	
+    <ion-title color="primary">
+      Todo App 
+    </ion-title>
+	
+		<ion-buttons slot="end">
+    <button style="background-color: orange;color: white; border-radius: 5px; height: 30px" (click)="logout()" *ngIf="auth.authenticated">
+			<ion-icon name="log-out" item-right></ion-icon>
+			Log out
+		</button>
+		</ion-buttons>
+
+		<ion-buttons slot="end">
+    <button style="background-color: orange;color: white; border-radius: 5px; height: 30px" (click)="login()" *ngIf="!auth.authenticated">
+			<ion-icon name="log-in" item-right></ion-icon>
+			Log in
+		</button>
+		</ion-buttons>
+	
+		
+	</ion-toolbar>
+	</ion-header>
   <ion-router-outlet></ion-router-outlet>
 </ion-app>
