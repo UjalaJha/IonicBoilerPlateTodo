@@ -39,10 +39,12 @@ export class AuthService {
 	private oauthSignIn(provider: AuthProvider) : Promise<any>  {
 
 		if (!(<any>window).cordova) {
+			console.log("signinwithpop");
 			return this.afAuth.auth.signInWithPopup(provider);
 		} 
 		else 
 		{
+			console.log("signinwithredirect");
 			return this.afAuth.auth.signInWithRedirect(provider)
 			.then(() => {
 				return this.afAuth.auth.getRedirectResult().then( result => {
@@ -52,6 +54,7 @@ export class AuthService {
 					// The signed-in user info.
 					let user = (<any>result).user;
 					console.log(token, user);
+
 				}).catch(function(error) {
 					// Handle Errors here.
 					alert(error.message);
