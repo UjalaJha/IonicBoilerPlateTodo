@@ -16,5 +16,8 @@
       <ion-input required type="number" placeholder="Priority" [(ngModel)]="todo.priority"></ion-input>
     </ion-item>
   </ion-list>
-  <ion-button shape="round" expand="full" (click)="saveTodo()"  class="custom-btn"  routerDirection="backward">Save</ion-button>
+  <!-- <div style="text-align: center;"> -->
+  <ion-button style="padding-left: 20% " shape="round" expand="half" (click)="saveTodo()"  class="custom-btn"  routerDirection="backward">Save</ion-button>
+  <ion-button shape="round" expand="half"  routerLink="/home"  class="custom-btn"  routerDirection="backward">Back</ion-button>
+  <!-- </div> -->
 </ion-content>

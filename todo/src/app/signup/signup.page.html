@@ -7,7 +7,7 @@
 <ion-content>
 
 	<form (ngSubmit)="signup()" [formGroup]="form">
-		<ion-list inset>
+		<ion-list>
 
 			<ion-item [ngClass]="{ invalid: emailErrors.hasError('*', ['touched']) }">
 				<ion-input type="text" placeholder="Email" formControlName="email"></ion-input>
