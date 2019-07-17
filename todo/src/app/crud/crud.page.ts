@@ -34,6 +34,18 @@ export class CrudPage implements OnInit {
 		    console.log(err);
 		  });  
 		}
+
+		add(){
+
+		this.restProvider.add()
+		.then((res) => {
+		 
+		    console.log(res);
+		  
+		 }, (err) => {
+		    console.log(err);
+		  });  
+		}
 }
 
 

@@ -64,5 +64,21 @@ export class RestService {
       });
     });
   }
+  add(){
+  	return new Promise((resolve, reject) =>{
+  		let userDetails: any={};
+      userDetails.name = 'com';
+      userDetails.age = 19;
+      userDetails.email = 'da@gmail.com';
+      userDetails.password = 'password';
+      console.log(userDetails);
+      this.http.post(this.apiUrl+'/create',userDetails)
+      .subscribe( res => {
+        resolve(res);
+      }, (err) => {
+        reject(err);
+      });
+    });
+  }
 
 }
