@@ -3,7 +3,33 @@
     <ion-title>crud</ion-title>
   </ion-toolbar>
 </ion-header>
-	Hello
+	<!-- Hello -->
 <ion-content>
+	<div class="cards-wrapper" >
+    <!-- <b class="tile-font">Users</b> -->
+    
+    <p *ngIf="users==null">No Data Available</p>
+    <div *ngIf="users!=null">
+    <div class="row">
+      <!-- <ion-slides slidesPerView=2  > -->
+        <ion-slide *ngFor="let user of users">
+          <!-- <div *ngIf="item.status==1"> -->
+          <div  class="card col-sm-6 col-lg-3" style="width: 16rem;" >
+            <div class="card-body">
+              <h4><p class=" module line-clamp2" >{{user.name}}</p></h4>
+              <!-- <h4 id="{{item.scheme_id}}" style="font-size: 0.1em;color: white;" >{{item.scheme_id}}</h4> -->
+              <input type="hidden" value={{user.user_id}} [(ngModel)] = 'user_id'>
 
+              <p class="card-text module line-clamp">{{user.email}}</p>
+              <a href="#" class="btn btn-primary" (click)="userdetail(user.user_id)">Edit</a>
+              <a href="#" class="btn btn-primary2"><ion-icon name="trash" (click)="userdelete(user.user_id)"></ion-icon></a>
+
+            </div>
+          </div>
+          <!-- </div> -->
+        </ion-slide>
+      <!-- </ion-slides> -->
+      </div>
+    </div>
+  </div>
 </ion-content>

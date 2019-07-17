@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class RestService {
-	apiUrl: string = 'http://172.20.44.73:8000';
+	apiUrl: string = 'http://127.0.0.1:5000/api/users';
   constructor(public http: HttpClient) {
     console.log('Hello RestProvider Provider');
     
@@ -44,15 +44,19 @@ export class RestService {
     });
   }
 
-  applyForScheme(data){
+  getusers(){
     return new Promise((resolve, reject) =>{
-      let userDetails: any={};
-      // userDetails.user_id = data.id;
-      // userDetails.scheme_id = data.scheme_id;
-      // userDetails.scheme_id = 44;
-      userDetails = data;
-      console.log(userDetails);
-      this.http.get(this.apiUrl+'/applyScheme/1/2')
+      this.http.get(this.apiUrl+'/getall')
+      .subscribe( res => {
+        resolve(res);
+      }, (err) => {
+        reject(err);
+      });
+    });
+  }
+  userdelete(id){
+  	return new Promise((resolve, reject) =>{
+      this.http.get(this.apiUrl+'/delete/'+id)
       .subscribe( res => {
         resolve(res);
       }, (err) => {

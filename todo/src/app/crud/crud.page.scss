@@ -1,0 +1,197 @@
+@media (min-width: 768px) {
+	  /* show 3 items */
+	  .carousel-inner .active,
+	  .carousel-inner .active + .carousel-item,
+	  .carousel-inner .active + .carousel-item + .carousel-item {
+	    display: block;
+	  }
+
+	  .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
+	  .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item,
+	  .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item {
+	    transition: none;
+	  }
+
+	  .carousel-inner .carousel-item-next,
+	  .carousel-inner .carousel-item-prev {
+	    position: relative;
+	    transform: translate3d(0, 0, 0);
+	  }
+	  
+	  .carousel-inner .active.carousel-item + .carousel-item + .carousel-item + .carousel-item {
+	    position: absolute;
+	    top: 0;
+	    right: -33.3333%;
+	    z-index: -1;
+	    display: block;
+	    visibility: visible;
+	  }
+
+	  /* left or forward direction */
+	  .active.carousel-item-left + .carousel-item-next.carousel-item-left,
+	  .carousel-item-next.carousel-item-left + .carousel-item,
+	  .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item,
+	  .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item {
+	    position: relative;
+	    transform: translate3d(-100%, 0, 0);
+	    visibility: visible;
+	  }
+
+	  /* farthest right hidden item must be abso position for animations */
+	  .carousel-inner .carousel-item-prev.carousel-item-right {
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    z-index: -1;
+	    display: block;
+	    visibility: visible;
+	  }
+
+	  /* right or prev direction */
+	  .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
+	  .carousel-item-prev.carousel-item-right + .carousel-item,
+	  .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
+	  .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item {
+	    position: relative;
+	    transform: translate3d(100%, 0, 0);
+	    visibility: visible;
+	    display: block;
+	    visibility: visible;
+	  }
+	}
+
+	.poster{
+		background-image: url("https://www.oneindia.com/img/2018/07/population-1531182282.jpg");
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		/*box-shadow: inset 0px -100px 147px 20px rgba(255, 255, 255, 1.0);*/
+		box-shadow: inset 1px -185px 142px -68px rgba(255, 255, 255, 1.0);
+		/*position: relative;*/
+		display: flex;
+		flex-direction: column;
+		
+		height: 40%;
+	}
+
+	.intro{
+		margin-top: auto;
+		font-weight: bold;
+		font-size: 250%;
+		/*font-variant-caps: all-small-caps;*/
+
+	}
+
+	.commit-btn{
+		padding: 10px;
+		font-size: 100%;
+		
+	}
+
+	.bg-style{
+		/*background: black;*/
+	}
+
+	.cards-wrapper{
+		padding: 0 2%;
+		/*margin-bottom:10px;*/
+		
+
+	}
+
+	.btn{
+		background-color:#F1913D;
+		border-color:#F1913D;
+		text-align:center;
+		margin-bottom: 10px;
+	}
+	.tile{
+		width: 100%;
+		height: 130px; 
+		/*background-image: url("https://d1vdjc70h9nzd9.cloudfront.net/media/campaign/50000/50404/image/be04196573e2cf4bef354b08598b5e56043c96b8.JPG");*/
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+
+		position: relative;
+		text-align: center;
+	}
+
+	.tile-font{
+		font-size: 1.2em;
+		margin-bottom:10px;
+		color:#F1913D;
+	}
+
+	.commit-btn-bottom{
+		position: absolute;
+		bottom: 0px;
+		right: 0px;
+		/*opacity: 0.7;*/
+		padding: 5px;
+		font-size: 80%;
+	}
+	.card{
+		font-size: 0.75em !important;
+	    overflow: hidden;
+	    padding: 0;
+	    border: none;
+	    border-radius: .28571429rem;
+	    box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+	    margin-left:5px !important;
+	    margin-right:0px !important;
+	    margin-bottom: 10px !important;
+	    margin-top: 10px !important;
+
+
+	}
+	.card-body{
+		height: 160px;
+	}
+	.module {
+	  width: 100%;
+	  margin: 0 0 1em 0;
+	  overflow: hidden;
+	}
+	.module p {
+	  margin: 0;
+	}
+
+	.line-clamp {
+	  display: -webkit-box;
+	  -webkit-line-clamp: 3;
+	  -webkit-box-orient: vertical;  
+	}
+	.line-clamp2 {
+	  display: -webkit-box;
+	  -webkit-line-clamp: 2;
+	  -webkit-box-orient: vertical;  
+	  /*font-weight: bold;
+	  font-size:1.25rem;*/
+
+
+	}
+
+	.fade {
+	  position: relative;
+	  height: 3.6em; /* exactly three lines */
+	}
+	.fade:after {
+	  content: "";
+	  text-align: right;
+	  position: absolute;
+	  bottom: 0;
+	  right: 0;
+	  width: 70%;
+	  height: 1.2em;
+	  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 50%);
+	}
+
+	.last-line {
+	  height: 3.6em; /* exactly three lines */
+	  text-overflow: -o-ellipsis-lastline;
+	}
+
+	.ftellipsis {
+	  height: 3.6em;
+	}

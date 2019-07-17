@@ -18,6 +18,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { NgxErrorsModule } from '@hackages/ngxerrors';
 import { GooglePlus } from '@ionic-native/google-plus/ngx';
+import { HttpClientModule} from '@angular/common/http'; 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -28,7 +29,8 @@ import { GooglePlus } from '@ionic-native/google-plus/ngx';
     AngularFireAuthModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxErrorsModule
+    NgxErrorsModule,
+    HttpClientModule
   ],
   providers: [
     StatusBar,
